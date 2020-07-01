@@ -1,7 +1,7 @@
 
 > Open this page at [https://svein-tore.github.io/drone_mottaker/](https://svein-tore.github.io/drone_mottaker/)
 
-## Use as Extension
+## Bruke som utvidelse
 
 This repository can be added as an **extension** in MakeCode.
 
