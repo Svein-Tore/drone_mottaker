@@ -491,7 +491,14 @@ namespace AirBit {
         if (Roll < -90) {
             Roll = -90
         }
-
+        Pitch=Math.round(0.7004*Pitch+0.2335)
+        Roll=Math.round(0.7182*Roll+1.8636)
+        if (Throttle<=21) {
+            Throttle=Math.round(0.6421*Throttle+21.258)
+        }    
+        else if (Throttle>21) {
+            Throttle=Math.round(0.6643*Throttle+21.007)
+        }    
         let pitch11 = Pitch * scaling + offset
         let roll11 = Roll * scaling + offset
         let yaw11 = Yaw * scaling + offset
