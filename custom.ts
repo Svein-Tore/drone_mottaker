@@ -283,7 +283,7 @@ namespace AirBit {
     //% block
     export function plotYLine(y1: number, y2: number, x: number): void {
         /**
-         * Draw a line along the Y axis
+         * Draw a line along the Y axis. y1: first pixel, y2: last pixel
          */
 
         if (y1 >= y2) {
@@ -383,9 +383,7 @@ namespace AirBit {
             led.plot(0, 1)
         }
         // Add code here
-    } 
-
-
+    }
     //% block="flightcontrol|Throttle $Throttle|Yaw $Yaw|Pitch $Pitch|Roll $Roll|Arm $Arm|flightMode $flightMode|Buzzer $Buzzer"
     export function FlightControl(Throttle: number, Yaw: number, Pitch: number, Roll: number, Arm: number, flightMode: number, Buzzer: number): void {
         /**
@@ -393,17 +391,12 @@ namespace AirBit {
          * Throttle min: 0, max: 100
          * Yaw, Pitch Roll: min -90, max 90
          * Arm: 0 = Disarm, 1 = Arm 
-         * FlightModes: 
-         * 0 = Acro mode (no self-level) 
-         * 1 = Stabilise/self level (standard)
-         * 2 = Vision mode (not currently active)
-         * 3 = Calibrate acc
-         * Different modes might be added in the future
+         * FlightModes: (Not currently used)
          * Buzzer: 1 = make a beep sound, 0 = no beep (flight controller can still make sounds like battery warning and others)
-         *
+         * Led: Color of the LED
          */
         let buf = pins.createBuffer(16)
-        let scaling = 5
+        let scaling = 5.688
         let offset = 512
         // Header "Fade" (Spektsat code)
         buf[0] = 0
@@ -458,14 +451,13 @@ namespace AirBit {
 
         // Stabilise / self level mode
         if (flightMode == 1) {
-            flightMode = 180
+            flightMode = 45
         }
 
-        // Vision mode similar to angle mode in terms of stabilisation in flight controller
+        // Alt hold mode
         if (flightMode == 2) {
-            flightMode = 180
+            flightMode = 90
         }
-
 
         if (Throttle > 99) {
             Throttle = 99
@@ -498,7 +490,7 @@ namespace AirBit {
         }    
         else if (Throttle>21) {
             Throttle=Math.round(0.6643*Throttle+21.007)
-        }    
+        }
         let pitch11 = Pitch * scaling + offset
         let roll11 = Roll * scaling + offset
         let yaw11 = Yaw * scaling + offset
@@ -520,6 +512,8 @@ namespace AirBit {
         buf[14] = (6 << 2) | ((Buzzer11 >> 8) & 3)
         buf[15] = Buzzer11 & 255
         serial.writeBuffer(buf)
+
+
     }
 
 
