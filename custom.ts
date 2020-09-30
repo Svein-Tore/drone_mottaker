@@ -384,6 +384,8 @@ namespace AirBit {
         }
         // Add code here
     }
+
+
     //% block="flightcontrol|Throttle $Throttle|Yaw $Yaw|Pitch $Pitch|Roll $Roll|Arm $Arm|flightMode $flightMode|Buzzer $Buzzer"
     export function FlightControl(Throttle: number, Yaw: number, Pitch: number, Roll: number, Arm: number, flightMode: number, Buzzer: number): void {
         /**
@@ -395,6 +397,7 @@ namespace AirBit {
          * Buzzer: 1 = make a beep sound, 0 = no beep (flight controller can still make sounds like battery warning and others)
          * Led: Color of the LED
          */
+        let Led=0
         let buf = pins.createBuffer(16)
         let scaling = 5.688
         let offset = 512
@@ -459,6 +462,14 @@ namespace AirBit {
             flightMode = 90
         }
 
+        // Led color, limit between 0 and 255
+        if (Led > 255) {
+            Led = 255
+        }
+        if (Led < 0) {
+            Led = 0
+        }
+
         if (Throttle > 99) {
             Throttle = 99
         }
@@ -483,19 +494,13 @@ namespace AirBit {
         if (Roll < -90) {
             Roll = -90
         }
-        Pitch=Math.round(0.7004*Pitch+0.2335)
-        Roll=Math.round(0.7182*Roll+1.8636)
-        if (Throttle<=21) {
-            Throttle=Math.round(0.6421*Throttle+21.258)
-        }    
-        else if (Throttle>21) {
-            Throttle=Math.round(0.6643*Throttle+21.007)
-        }
+
         let pitch11 = Pitch * scaling + offset
         let roll11 = Roll * scaling + offset
         let yaw11 = Yaw * scaling + offset
         let throttle10 = (Throttle * 512) / 50
         let flightMode11 = flightMode * scaling
+        let led10 = Led << 2
 
         buf[2] = (0 << 2) | ((roll11 >> 8) & 3)
         buf[3] = roll11 & 255
