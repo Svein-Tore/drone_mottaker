@@ -399,7 +399,7 @@ namespace AirBit {
          */
         let Led=0
         let buf = pins.createBuffer(16)
-        let scaling = 5.688
+        let scaling = 5
         let offset = 512
         // Header "Fade" (Spektsat code)
         buf[0] = 0
@@ -494,11 +494,12 @@ namespace AirBit {
         if (Roll < -90) {
             Roll = -90
         }
-
+    	Pitch=Math.round(0.7004*Pitch+0.2335)
+        Roll=Math.round(0.7182*Roll+1.8636)
         let pitch11 = Pitch * scaling + offset
         let roll11 = Roll * scaling + offset
         let yaw11 = Yaw * scaling + offset
-        let throttle10 = (Throttle * 512) / 50
+        let throttle10 = ((Throttle+20) * 512) / 50
         let flightMode11 = flightMode * scaling
         let led10 = Led << 2
 
