@@ -1,5 +1,5 @@
 
-Åpen denne siden med følgende url:[https://svein-tore.github.io/drone_mottaker/](https://svein-tore.github.io/drone_mottaker/)
+Åpne denne siden med følgende url:    [https://svein-tore.github.io/drone_mottaker/](https://svein-tore.github.io/drone_mottaker/)
 
 ## Bruke som utvidelse
 
