@@ -496,7 +496,7 @@ namespace AirBit {
         }
     	Pitch=Math.round(0.7004*Pitch+0.2335)
         Roll=Math.round(0.7182*Roll+1.8636)
-        Throttle=Math.round(0.8*Throttle+20)
+        Throttle=Throttle+20
         let pitch11 = Pitch * scaling + offset
         let roll11 = Roll * scaling + offset
         let yaw11 = Yaw * scaling + offset
