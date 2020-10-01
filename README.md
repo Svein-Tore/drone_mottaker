@@ -10,20 +10,14 @@ Dette "repository" kan legges til som en **utvidelse** i MakeCode.
 * klikk på **Utvidelser** i menyen under tannhjulet
 * søk etter **https://github.com/svein-tore/drone_mottaker** og importér
 
-## Edit this project ![Bygg statusmerke](https://github.com/svein-tore/drone_mottaker/workflows/MakeCode/badge.svg)
+## Rediger dette prosjektet ![Bygg statusmerke](https://github.com/svein-tore/drone_mottaker/workflows/MakeCode/badge.svg)
 
-To edit this repository in MakeCode.
+For å endre dette "repository" i MakeCode.:
 
 * åpne [https://makecode.microbit.org/](https://makecode.microbit.org/)
 * klikk på **Importer** og så på **Importér URL**
 * lim inn **https://github.com/svein-tore/drone_mottaker** og klikk på importér
 
-## Forhåndsvisning av blokker
-
-This image shows the blocks code from the last commit in master.
-This image may take a few minutes to refresh.
-
-![En opptegnet visning av blokkene](https://github.com/svein-tore/drone_mottaker/raw/master/.github/makecode/blocks.png)
 
 #### Metadata (brukes for søk, visualisering)
 
