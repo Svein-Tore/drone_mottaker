@@ -386,7 +386,7 @@ namespace AirBit {
     }
 
 
-    //% block="flightcontrol|Throttle $Throttle|Yaw $Yaw|Pitch $Pitch|Roll $Roll|AUX $Arm|flightMode $flightMode|Buzzer $Buzzer"
+    //% block="flightcontrol|Throttle $Throttle|Yaw $Yaw|Pitch $Pitch|Roll $Roll|Aux $Arm|flightMode $flightMode|Buzzer $Buzzer"
     export function FlightControl(Throttle: number, Yaw: number, Pitch: number, Roll: number, Arm: number, flightMode: number, Buzzer: number): void {
         /**
          * Control TYPR12 (Throttle, Yaw, Pitch, Roll and AUX1 and AUX2) using the Spektsat 2048 protocol
