@@ -1,5 +1,5 @@
 
-> Open this page at [https://svein-tore.github.io/drone_mottaker/](https://svein-tore.github.io/drone_mottaker/)
+Åpen denne siden med følgende url:[https://svein-tore.github.io/drone_mottaker/](https://svein-tore.github.io/drone_mottaker/)
 
 ## Bruke som utvidelse
 
@@ -19,7 +19,3 @@ For å endre dette "repository" i MakeCode.:
 * lim inn **https://github.com/svein-tore/drone_mottaker** og klikk på importér
 
 
-#### Metadata (brukes for søk, visualisering)
-
-* for PXT/microbit
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
