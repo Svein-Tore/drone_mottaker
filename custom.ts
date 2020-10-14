@@ -411,7 +411,7 @@ namespace AirBit {
         // 0xb2 11MS 2048 DSMX
 
         // Reverse the pitch (For F3 flight controller)
-        Pitch = - Pitch
+        //Pitch = - Pitch
 
         // Calibrate mode, perform a calibration of the acc using stick command
         if (flightMode == 3) {
